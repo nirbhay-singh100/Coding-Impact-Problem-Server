@@ -53,7 +53,6 @@ async function getProblems(req, res, next) {
 async function deleteProblem(req, res, next) {
   try {
     const deletedProblemId = await problemService.deleteProblem(req.params.id);
-    console.log(deletedProblemId);
 
     return res.status(StatusCodes.OK).json({
       succes: true,

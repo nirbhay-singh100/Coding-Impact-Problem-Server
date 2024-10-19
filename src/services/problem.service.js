@@ -46,7 +46,6 @@ class ProblemService {
       const deletedProblemId = await this.problemRepository.deleteProblem(
         problemId
       );
-      console.log("Service", deletedProblemId);
 
       return deletedProblemId;
     } catch (error) {
