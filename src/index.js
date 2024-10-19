@@ -2,9 +2,11 @@ const express = require("express");
 const { PORT } = require("./config/server.config");
 const bodyParser = require("body-parser");
 const apiRouter = require("./routes");
-const errorHandler = require("./utils/errorHandler");
+const { errorHandler } = require("./utils");
 const connectToDB = require("./config/db.config");
 const mongoose = require("mongoose");
+
+const { Problem } = require("./models");
 
 const app = express();
 
