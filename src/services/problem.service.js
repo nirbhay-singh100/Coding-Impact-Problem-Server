@@ -12,11 +12,7 @@ class ProblemService {
         problemData.description
       );
 
-      console.log("Problem data at service: ", problemData);
-
       const problem = await this.problemRepository.createProblem(problemData);
-
-      console.log("Problem created", problem);
 
       return problem;
     } catch (error) {

@@ -12,9 +12,6 @@ function pingProblemController(req, res) {
 
 async function addProblem(req, res, next) {
   try {
-    //incoming data
-    console.log("incoming req body", req.body);
-
     const newProblem = await problemService.createProblem(req.body);
     return res.status(StatusCodes.CREATED).json({
       success: true,
