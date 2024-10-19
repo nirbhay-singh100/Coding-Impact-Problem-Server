@@ -50,9 +50,16 @@ async function getProblems(req, res, next) {
     next(err);
   }
 }
-function deleteProblem(req, res, next) {
+async function deleteProblem(req, res, next) {
   try {
-    throw new NotImplemented("deleteProblems");
+    const deletedProblemId = await problemService.deleteProblem(req.params.id);
+
+    return res.status(StatusCodes.OK).json({
+      succes: true,
+      message: "Successfully deleted the problem",
+      error: {},
+      data: { id: deletedProblemId },
+    });
   } catch (err) {
     next(err);
   }
